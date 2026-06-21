@@ -1,0 +1,32 @@
+data:
+  train_path: data/raw/train.csv
+  test_path: data/raw/test.csv
+  target_column: "Insurance Premium ($)"
+  random_seed: 42
+
+outliers:
+  enabled: true
+  lower_quantile: 0.01
+  upper_quantile: 0.99
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+models:
+  linear_regression: {}
+  random_forest:
+    n_estimators: 200
+    max_depth: 15
+    random_state: 42
+  xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.1
+    random_state: 42
+
+artifacts:
+  models_path: artifacts/models
+  metrics_path: artifacts/metrics
+  plots_path: artifacts/plots
+  submissions_path: artifacts/submissions
